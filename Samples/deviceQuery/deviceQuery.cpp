@@ -226,8 +226,22 @@ int main(int argc, char **argv) {
            deviceProp.tccDriver ? "TCC (Tesla Compute Cluster Driver)"
                                 : "WDDM (Windows Display Driver Model)");
 #endif
+
+printf(" ==== Unified addressing properties ==== \n");
     printf("  Device supports Unified Addressing (UVA):      %s\n",
            deviceProp.unifiedAddressing ? "Yes" : "No");
+    printf("  Device supports managed memory:      %s\n",
+           deviceProp.managedMemory ? "Yes" : "No");
+    printf("  Device supports 'Concurrent Managed Access':      %s\n",
+           deviceProp.concurrentManagedAccess ? "Yes" : "No");
+    printf("  Device supports ATS:      %s\n",
+           deviceProp.pageableMemoryAccessUsesHostPageTables ? "Yes" : "No");
+    printf("  Device supports pageable memory access:      %s\n",
+           deviceProp.pageableMemoryAccess ? "Yes" : "No");
+    printf("  Device supports direct mem access from host:      %s\n",
+           deviceProp.directManagedMemAccessFromHost  ? "Yes" : "No");
+printf(" ===========================================\n");
+
     printf("  Device supports Compute Preemption:            %s\n",
            deviceProp.computePreemptionSupported ? "Yes" : "No");
     printf("  Supports Cooperative Kernel Launch:            %s\n",
